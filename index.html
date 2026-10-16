@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SpeedyKleen Cleaning Services | Fast, Spotless & Reliable</title>
+  
+  <!-- Google Fonts & FontAwesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="#" class="logo">
+        <i class="fa-solid fa-bolt logo-icon"></i>
+        <span>Speedy<span class="highlight">Kleen</span></span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#services">Services</a>
+        <a href="#calculator">Price Estimator</a>
+        <a href="#schedule">Hours</a>
+        <a href="#why-us">Why Us</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#booking" class="btn btn-primary">Book Now</a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container hero-container">
+      <div class="hero-content">
+        <span class="badge"><i class="fa-solid fa-sparkles"></i> 100% Satisfaction Guaranteed</span>
+        <h1>Sparkling Clean Homes & Offices in Record Time</h1>
+        <p>SpeedyKleen brings vetted, background-checked cleaning professionals straight to your doorstep. Transparent pricing, easy online booking, and eco-friendly products.</p>
+        
+        <div class="hero-buttons">
+          <a href="#booking" class="btn btn-primary btn-large"><i class="fa-regular fa-calendar-check"></i> Book in 60 Seconds</a>
+          <a href="#calculator" class="btn btn-secondary btn-large"><i class="fa-solid fa-calculator"></i> Calculate Price</a>
+        </div>
+
+        <div class="trust-stats">
+          <div class="stat-item">
+            <span class="stat-number">10k+</span>
+            <span class="stat-label">Homes Cleaned</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-number">4.9 ★</span>
+            <span class="stat-label">Customer Rating</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Bonded & Insured</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service Availability Checker Card -->
+      <div class="hero-card">
+        <h3><i class="fa-solid fa-location-dot"></i> Check Service Availability</h3>
+        <p>Choose a listed ZIP code to check service availability.</p>
+        <form id="zipForm" class="zip-form">
+          <select id="zipInput" required aria-label="Choose a service ZIP code">
+            <option value="">Choose a ZIP Code</option>
+            <option value="90210">90210</option>
+            <option value="10001">10001</option>
+            <option value="60601">60601</option>
+            <option value="33101">33101</option>
+            <option value="94102">94102</option>
+            <option value="75001">75001</option>
+          </select>
+          <button type="submit" class="btn btn-primary">Check</button>
+        </form>
+        <div id="zipResult" class="zip-result"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services section-padding">
+    <div class="container">
+      <div class="section-header">
+        <h2>Our Cleaning Services</h2>
+        <p>Tailored cleaning solutions customized to fit your schedule and lifestyle.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-house"></i></div>
+          <h3>Standard Home Cleaning</h3>
+          <p>Perfect for regular upkeep. Includes dusting, vacuuming, mopping, trash removal, and bathroom sanitization.</p>
+          <ul class="service-features">
+            <li><i class="fa-solid fa-check"></i> Kitchen & Countertops</li>
+            <li><i class="fa-solid fa-check"></i> Bathroom Deep Disinfection</li>
+            <li><i class="fa-solid fa-check"></i> Living Area & Dusting</li>
+          </ul>
+          <a href="#booking" class="btn btn-outline" onclick="selectService('standard')">Select Plan</a>
+        </div>
+
+        <div class="service-card featured">
+          <div class="popular-tag">Most Popular</div>
+          <div class="service-icon"><i class="fa-solid fa-pump-soap"></i></div>
+          <h3>Deep Cleaning</h3>
+          <p>Comprehensive top-to-bottom scrub for homes that haven't been professionally cleaned in over 30 days.</p>
+          <ul class="service-features">
+            <li><i class="fa-solid fa-check"></i> Everything in Standard</li>
+            <li><i class="fa-solid fa-check"></i> Baseboards & Light Fixtures</li>
+            <li><i class="fa-solid fa-check"></i> Deep Kitchen Scrubbing</li>
+          </ul>
+          <a href="#booking" class="btn btn-primary" onclick="selectService('deep')">Select Plan</a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-truck-ramp-box"></i></div>
+          <h3>Move In / Move Out</h3>
+          <p>Complete overhaul designed to get full security deposits back or ensure a fresh start in your new home.</p>
+          <ul class="service-features">
+            <li><i class="fa-solid fa-check"></i> Inside Cabinets & Drawers</li>
+            <li><i class="fa-solid fa-check"></i> Inside Appliance Clean</li>
+            <li><i class="fa-solid fa-check"></i> Detailed Wall Spot Cleaning</li>
+          </ul>
+          <a href="#booking" class="btn btn-outline" onclick="selectService('movein')">Select Plan</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Instant Price Calculator Section -->
+  <section id="calculator" class="calculator-section section-padding bg-light">
+    <div class="container">
+      <div class="section-header">
+        <h2>Instant Cost Estimator</h2>
+        <p>Customize your options to see a live price estimation instantly.</p>
+      </div>
+
+      <div class="calculator-wrapper">
+        <div class="calc-controls">
+          <!-- Service Type -->
+          <div class="calc-group">
+            <label>Cleaning Type</label>
+            <div class="radio-tiles">
+              <label class="tile">
+                <input type="radio" name="calcType" value="standard" checked>
+                <span>Standard</span>
+              </label>
+              <label class="tile">
+                <input type="radio" name="calcType" value="deep">
+                <span>Deep Clean</span>
+              </label>
+              <label class="tile">
+                <input type="radio" name="calcType" value="movein">
+                <span>Move In/Out</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Rooms & Bathrooms -->
+          <div class="calc-row">
+            <div class="calc-group">
+              <label for="bedrooms">Bedrooms: <span id="bedVal">2</span></label>
+              <input type="range" id="bedrooms" min="1" max="6" value="2">
+            </div>
+            <div class="calc-group">
+              <label for="bathrooms">Bathrooms: <span id="bathVal">2</span></label>
+              <input type="range" id="bathrooms" min="1" max="5" value="2">
+            </div>
+          </div>
+
+          <!-- Frequency Discount -->
+          <div class="calc-group">
+            <label>Cleaning Frequency</label>
+            <div class="freq-options">
+              <button type="button" class="freq-btn active" data-discount="0.20">Weekly (Save 20%)</button>
+              <button type="button" class="freq-btn" data-discount="0.15">Bi-Weekly (Save 15%)</button>
+              <button type="button" class="freq-btn" data-discount="0.0">One-Time</button>
+            </div>
+          </div>
+
+          <!-- Add-ons -->
+          <div class="calc-group">
+            <label>Optional Add-ons</label>
+            <div class="addons-grid">
+              <label class="checkbox-tile">
+                <input type="checkbox" class="addon-check" value="25"> Inside Fridge (+<span class="currency-symbol">$</span><span class="addon-price" data-usd-price="25">25</span>)
+              </label>
+              <label class="checkbox-tile">
+                <input type="checkbox" class="addon-check" value="30"> Inside Oven (+<span class="currency-symbol">$</span><span class="addon-price" data-usd-price="30">30</span>)
+              </label>
+              <label class="checkbox-tile">
+                <input type="checkbox" class="addon-check" value="35"> Interior Windows (+<span class="currency-symbol">$</span><span class="addon-price" data-usd-price="35">35</span>)
+              </label>
+              <label class="checkbox-tile">
+                <input type="checkbox" class="addon-check" value="40"> Laundry Wash & Fold (+<span class="currency-symbol">$</span><span class="addon-price" data-usd-price="40">40</span>)
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Price Display Card -->
+        <div class="calc-summary">
+          <h3>Estimated Total</h3>
+          <label class="currency-select-label" for="currencySelect">Currency</label>
+          <select id="currencySelect" class="currency-select">
+            <option value="USD">US Dollar (USD)</option>
+            <option value="NGN">Nigerian Naira (NGN)</option>
+          </select>
+          <div class="price-box">
+            <span class="currency-symbol">$</span>
+            <span id="totalPrice">128</span>
+          </div>
+          <p class="price-note">NGN estimates use a rate of ₦1,330 per $1.</p>
+          <p class="price-note">*Final quote confirmed prior to service.</p>
+          <button class="btn btn-primary btn-block" id="applyEstimateBtn">Apply & Book This Plan</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Business Hours Schedule -->
+  <section id="schedule" class="schedule-section section-padding bg-light">
+    <div class="container">
+      <div class="section-header">
+        <h2>Our Weekly Schedule</h2>
+        <p>Find a convenient time to plan your cleaning service.</p>
+      </div>
+
+      <div class="hours-table-wrap">
+        <table class="hours-table">
+          <caption>SpeedyKleen business hours</caption>
+          <tbody>
+            <tr>
+              <th scope="row">Monday</th>
+              <td>7:00 AM – 8:00 PM</td>
+            </tr>
+            <tr>
+              <th scope="row">Tuesday</th>
+              <td>7:00 AM – 8:00 PM</td>
+            </tr>
+            <tr>
+              <th scope="row">Wednesday</th>
+              <td>7:00 AM – 8:00 PM</td>
+            </tr>
+            <tr>
+              <th scope="row">Thursday</th>
+              <td>7:00 AM – 8:00 PM</td>
+            </tr>
+            <tr>
+              <th scope="row">Friday</th>
+              <td>7:00 AM – 8:00 PM</td>
+            </tr>
+            <tr>
+              <th scope="row">Saturday</th>
+              <td>7:00 AM – 8:00 PM</td>
+            </tr>
+            <tr>
+              <th scope="row">Sunday</th>
+              <td>Closed</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="booked-slots">
+          <h3>Booked appointments</h3>
+          <ul id="bookedSlotsList" aria-live="polite">
+            <li>No appointments booked yet.</li>
+          </ul>
+        </div>
+        <a href="#booking" class="btn btn-primary">Schedule a Cleaning</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking Section -->
+  <section id="booking" class="booking-section section-padding">
+    <div class="container">
+      <div class="section-header">
+        <h2>Schedule Your Service</h2>
+        <p>Book your preferred date and time in less than a minute.</p>
+      </div>
+
+      <form id="bookingForm" class="booking-form">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" placeholder="Jane Doe" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="jane@example.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" placeholder="(555) 000-0000" required>
+          </div>
+
+          <div class="form-group">
+            <label for="address">Street Address</label>
+            <input type="text" id="address" placeholder="123 Main St, Apt 4B" required>
+          </div>
+
+          <div class="form-group">
+            <label for="bookingDate">Preferred Date</label>
+            <input type="date" id="bookingDate" required>
+          </div>
+
+          <div class="form-group">
+            <label for="bookingTime">Preferred Time Slot</label>
+            <select id="bookingTime" required>
+              <option value="">Select a time slot...</option>
+              <option value="08:00 AM - 11:00 AM">Morning (08:00 AM - 11:00 AM)</option>
+              <option value="11:00 AM - 02:00 PM">Midday (11:00 AM - 02:00 PM)</option>
+              <option value="02:00 PM - 05:00 PM">Afternoon (02:00 PM - 05:00 PM)</option>
+            </select>
+            <p id="bookingAvailability" class="booking-availability" role="status" aria-live="polite"></p>
+          </div>
+        </div>
+
+        <div class="form-group full-width">
+          <label for="notes">Special Instructions or Pet Warnings</label>
+          <textarea id="notes" rows="3" placeholder="Let us know if you have pets, gate codes, or specific focus areas..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-large btn-block">Confirm Booking Request</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Testimonials / Reviews Section -->
+  <section id="reviews" class="reviews-section section-padding bg-light">
+    <div class="container">
+      <div class="section-header">
+        <h2>What Our Clients Say</h2>
+        <p>Real feedback from happy homeowners and businesses.</p>
+      </div>
+
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>"SpeedyKleen transformed my home! They were punctual, extremely detailed, and brought all their own eco-friendly products. Highly recommended!"</p>
+          <div class="reviewer">
+            <strong>Sarah Jenkins</strong>
+            <span>Residential Client</span>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>"We use SpeedyKleen for our office space weekly. Always professional, trustworthy, and fast. The instant online calculator makes budgeting super easy."</p>
+          <div class="reviewer">
+            <strong>David Miller</strong>
+            <span>Small Business Owner</span>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>"Got our move-out clean done with them and received our entire security deposit back. Fantastic service and top-notch customer support."</p>
+          <div class="reviewer">
+            <strong>Emily & Mark</strong>
+            <span>Move-Out Cleaning</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="faq-section section-padding">
+    <div class="container">
+      <div class="section-header">
+        <h2>Frequently Asked Questions</h2>
+        <p>Everything you need to know about our service.</p>
+      </div>
+
+      <div class="faq-accordion">
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Do I need to be home during the cleaning?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>No, you do not need to be home! Many of our clients provide key lockbox codes or leave keys with concierge. We treat your property with the utmost care and privacy.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Are cleaning supplies included?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Yes, our cleaners bring all high-grade eco-friendly products and equipment (vacuums, mops, microfibers) required to get the job done right.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Are your cleaners background-checked and insured?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Absolutely. Every SpeedyKleen team member undergoes nationwide background checks, in-person training, and is fully bonded and insured.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>How is my cleaning price estimated?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>The estimator uses your cleaning type, number of bedrooms and bathrooms, frequency, and selected add-ons. Your final quote is confirmed before service.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Can I schedule recurring cleanings?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. Choose weekly or bi-weekly cleaning, or book a one-time service.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <a href="#" class="logo">
+          <i class="fa-solid fa-bolt logo-icon"></i>
+          <span>Speedy<span class="highlight">Kleen</span></span>
+        </a>
+        <p>Fast, reliable, and premium quality cleaning services for homes and businesses.</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#calculator">Estimator</a></li>
+          <li><a href="#schedule">Business Hours</a></li>
+          <li><a href="#booking">Book Clean</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <p><i class="fa-solid fa-phone"></i> (800) 555-KLEEN</p>
+        <p><i class="fa-solid fa-envelope"></i> support@speedykleen.com</p>
+        <p><i class="fa-solid fa-clock"></i> Mon-Sat: 7:00 AM - 8:00 PM</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 SpeedyKleen Cleaning Services. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- External JS -->
+  <script src="app.js"></script>
+</body>
+</html>
